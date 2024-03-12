@@ -424,7 +424,7 @@ TEST_F(place_tiles_TestSuite, invalid_vert_touch07) {
 }
 
 TEST_F(place_tiles_TestSuite, invalid_vert_touch08) {
-     INFO("Several successful placements of tiles");
+     INFO("Attempt to play tiles vertically that touch tiles on the right");
 	GameState *game = initialize_game_state("./tests/boards/board08.txt");
     game = place_tiles(game, 8, 2, 'V', "LAYGROUND", &num_tiles_placed);
     EXPECT_EQ(num_tiles_placed, 0);
@@ -545,7 +545,7 @@ TEST_F(place_tiles_TestSuite, invalid_horiz_touch06) {
 }
 
 TEST_F(place_tiles_TestSuite,invalid_horiz_touch07) {
-    INFO("Several successful placements of tiles");
+    INFO("Invalid placement of tiles horizontally that run off the board");
 	GameState *game = initialize_game_state("./tests/boards/board08.txt"); 
     game = place_tiles(game, 6, 13, 'H', "ROID", &num_tiles_placed);
     EXPECT_EQ(num_tiles_placed, 0);
